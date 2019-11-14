@@ -12,7 +12,17 @@ export class AuthService {
   constructor() { }
 
   login(login: string, password: string): Observable<boolean> {
-    return
+    return of(true).pipe(
+      delay(1000),
+      tap(() => {
+        if (login === 'admin' && password === 'qwerty') { this.isLoggedin = true }
+        return this.isLoggedin
+      })
+    )
+  }
+
+  logout(): void {
+    this.isLoggedin = false
   }
 
 }
