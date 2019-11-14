@@ -9,7 +9,6 @@ import {AdminModule} from './admin-page/admin.module'
 
 // Сервисы
 import {PhraseService} from './shared/services/phrase.service'
-import {AuthGuard} from './shared/services/auth.guard'
 
 // Компоненты
 import { AppComponent } from './app.component';
@@ -31,8 +30,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
     AdminModule
   ],
   providers: [
-    PhraseService,
-    AuthGuard
+    PhraseService
   ],
   bootstrap: [AppComponent]
 })

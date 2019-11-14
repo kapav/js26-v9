@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ) {
-    if (this.authService.isLoggedin) {
+    if (this.authService.isLoggedIn) {
       return true
     } else {
       this.authService.redirectUrl = state.url

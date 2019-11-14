@@ -24,14 +24,14 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {}
 
   setMessage() {
-    this.message = this.authService.isLoggedin ? 'Вход выполнен.' : 'Произошёл выход.'
+    this.message = this.authService.isLoggedIn ? 'Вход выполнен.' : 'Произошёл выход.'
   }
 
   login() {
     this.message = 'Попытка входа...'
     this.authService.login(this.userLogin, this.password).subscribe(() => {
       this.setMessage()
-      if (this.authService.isLoggedin) {
+      if (this.authService.isLoggedIn) {
         const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin'
         this.router.navigate([redirect])
       }

@@ -5,7 +5,7 @@ import {delay, tap} from 'rxjs/operators'
 @Injectable()
 export class AuthService {
 
-  isLoggedin: boolean = false
+  isLoggedIn: boolean = false
 
   redirectUrl: string
 
@@ -15,14 +15,14 @@ export class AuthService {
     return of(true).pipe(
       delay(1000),
       tap(() => {
-        if (login === 'admin' && password === 'qwerty') { this.isLoggedin = true }
-        return this.isLoggedin
+        if (login === 'admin' && password === 'qwerty') { this.isLoggedIn = true }
+        return this.isLoggedIn
       })
     )
   }
 
   logout(): void {
-    this.isLoggedin = false
+    this.isLoggedIn = false
   }
 
 }
